@@ -56,4 +56,12 @@ Type the following URL into browser, replace the variables (CAPITALIZED ONES):
 https://graph.facebook.com/oauth/access_token?client_id=APP_ID&client_secret=APP_SECRET&grant_type=fb_exchange_token&fb_exchange_token=THE_TOKEN_YOU_GOT_FROM_GRAPH_EXPLORER_JUST_NOW
 ```
 
+Once you got the new access token, set it to Heroku environment variable:
+
+```
+$ heroku config:set ACCESS_TOKEN=new_access_token
+```
+
+The bumper will restart itself with the new access token. Sweet eh~
+
 Reference: [https://developers.facebook.com/docs/facebook-login/access-tokens/](https://developers.facebook.com/docs/facebook-login/access-tokens/)
