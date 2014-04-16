@@ -7,7 +7,7 @@ No seriously, this is super barebone example of post bumping on facebook using r
 I assume you know how to use terminal and unix stuff etc, hackers.
 
 1. Get a [heroku](http://heroku.com) account. Install the toolbelt and learn how to use it.
-2. Create an application on [facebook developers](https://developer.facebook.com). Then go to [graph explorer](https://developers.facebook.com/tools/explorer/), select the app you just created, then click on **Get Access Token**.
+2. Create an application on [facebook developers](https://developer.facebook.com). Then go to [graph explorer](https://developers.facebook.com/tools/explorer/), select the app you just created, then click on **Get Access Token**. Your access token will actually expire soon, refer to [Extending Access Token Lifetime](#extending-access-token-lifetime) is Issues section below.
 3. Under *User Data Permissions*, tick **user_groups**. Then under *Extended Permissions*, tick **publish_actions**. We are going to need the permissions to post a comment to your target group post, then delete it to bump the post.
 4. Once you authorized your app to do such actions, copy down the access token generated.
 5. Find your group post ID. If your group post permalink is `https://www.facebook.com/groups/groupname/permalink/736699879685753`, then your post ID should be the last part of URL, bunch of numbers.
@@ -41,3 +41,19 @@ I assume you know how to use terminal and unix stuff etc, hackers.
     ```
 
 Use this at your own risk.
+
+# Issues
+
+## Extending Access Token Lifetime
+
+Your access token actually expires quite soon, no fret, we just need to extend it.
+
+Now before you set the short lived access token into heroku config (or if you did, never mind). We are going to use it to exchange for a long lived one, I guess it probably lasts around 60 days.
+
+Type the following URL into browser, replace the variables (CAPITALIZED ONES):
+
+```
+https://graph.facebook.com/oauth/access_token?client_id=APP_ID&client_secret=APP_SECRET&grant_type=fb_exchange_token&fb_exchange_token=THE_TOKEN_YOU_GOT_FROM_GRAPH_EXPLORER_JUST_NOW
+```
+
+Reference: [https://developers.facebook.com/docs/facebook-login/access-tokens/](https://developers.facebook.com/docs/facebook-login/access-tokens/)
