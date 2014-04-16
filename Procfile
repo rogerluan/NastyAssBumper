@@ -1,0 +1,1 @@
+bump: bundle exec ruby bump-gsa.rb
