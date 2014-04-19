@@ -3,7 +3,7 @@ require 'koala'
 
 scheduler = Rufus::Scheduler.new
 
-scheduler.every '10m' do
+scheduler.every ENV['FREQUENCY'] do
   @graph = Koala::Facebook::API.new ENV['ACCESS_TOKEN']
   @comment = @graph.put_comment(ENV['POST_ID'], 'x')
   @delete_comment = @graph.delete_object @comment['id']
