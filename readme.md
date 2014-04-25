@@ -22,7 +22,7 @@ I assume you know how to use terminal and unix stuff etc, hackers.
 7. Once you have created the app, we set the environment variables.
 
     ```
-    $ heroku config:set POST_ID=736699879685753 ACCESS_TOKEN=fewjfjwfjewfhjcbvhh324732u32832d2h23h892982389289h92dhu32uiehu
+    $ heroku config:set POST_ID=736699879685753 ACCESS_TOKEN=fewjfjwfjewfhjcbvhh324732u32832d2h23h892982389289h92dhu32uiehu FREQUENCY=10m
     ```
 
 8. Push the app up
