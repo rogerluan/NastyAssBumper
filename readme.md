@@ -1,48 +1,23 @@
-# SerialBumper Barebone
+# Nasty Ass Bumper
 
-No seriously, this is super barebone example of post bumping on facebook using rufus-scheduler and koala gems.
+A simple script to bump your post in group that you are not administrating and make it look like it's pinned.
 
-## Instruction
+## Setting Up
 
-I assume you know how to use terminal and unix stuff etc, hackers.
-
-1. Get a [heroku](http://heroku.com) account. Install the toolbelt and learn how to use it.
-2. Create an application on [facebook developers](https://developer.facebook.com). Then go to [graph explorer](https://developers.facebook.com/tools/explorer/), select the app you just created, then click on **Get Access Token**. Your access token will actually expire soon, refer to [Extending Access Token Lifetime](#extending-access-token-lifetime) is Issues section below.
-3. Under *User Data Permissions*, tick **user_groups**. Then under *Extended Permissions*, tick **publish_actions**. We are going to need the permissions to post a comment to your target group post, then delete it to bump the post.
-4. Once you authorized your app to do such actions, copy down the access token generated.
-5. Find your group post ID. If your group post permalink is `https://www.facebook.com/groups/groupname/permalink/736699879685753`, then your post ID should be the last part of URL, bunch of numbers.
-6. Now we gonna create a heroku app for that. Before that please initiate git repository.
-
-    ```
-    # Replace xxxbumperxxx with any name you want
-    $ git init
-    $ heroku create xxxbumperxxx
-    ```
-
-7. Once you have created the app, we set the environment variables.
-
-    ```
-    $ heroku config:set POST_ID=736699879685753 ACCESS_TOKEN=fewjfjwfjewfhjcbvhh324732u32832d2h23h892982389289h92dhu32uiehu FREQUENCY=10m
-    ```
-
-8. Push the app up
-
-    ```
-    $ git add .
-    $ git commit -m 'Let the bumping begin!'
-    $ git push -u heroku master
-    # Building bla bla bla
-    ```
-
-9. If the deployment is successful, we start the bump dyno.
-
-    ```
-    $ heroku ps:scale bump=1
-    ```
-
-Use this at your own risk.
+1. Create an application on [facebook developers](https://developer.facebook.com/).
+2. When you are done, take note of the application ID and application secret, you will need them later.
+3. Go to [Graph Explorer](https://developers.facebook.com/tools/explorer/), click on the app you have just created, click on **Get Access Token**.
+4. Under *User Data Permissions*, tick **user_groups**. Then under *Extended Permissions*, tick **publish_actions**. We are going to need the permissions to post a comment to your target group post, then delete it to bump the post.
+5. Once you authorized your app to do such actions, copy down the access token generated.
+6. Do it now or later: [Extend your access token lifetime](#extending-access-token-lifetime).
+7. Find your group post ID. If your group post permalink is `https://www.facebook.com/groups/groupname/permalink/736699879685753`, then your post ID should be the last part
+8. Click this magical button: [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/anonoz/NastyAssBumper)
 
 # Issues
+
+## If guide is not clear enough or confuse you
+
+[Create a new issue](https://github.com/anonoz/NastyAssBumper/issues/new) and lemme know where can I explain better.
 
 ## Extending Access Token Lifetime
 
@@ -56,12 +31,6 @@ Type the following URL into browser, replace the variables (CAPITALIZED ONES):
 https://graph.facebook.com/oauth/access_token?client_id=APP_ID&client_secret=APP_SECRET&grant_type=fb_exchange_token&fb_exchange_token=THE_TOKEN_YOU_GOT_FROM_GRAPH_EXPLORER_JUST_NOW
 ```
 
-Once you got the new access token, set it to Heroku environment variable:
-
-```
-$ heroku config:set ACCESS_TOKEN=new_access_token
-```
-
-The bumper will restart itself with the new access token. Sweet eh~
+Once you got the new access token, copy it down. We will use them later.
 
 Reference: [https://developers.facebook.com/docs/facebook-login/access-tokens/](https://developers.facebook.com/docs/facebook-login/access-tokens/)
