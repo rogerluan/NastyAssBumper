@@ -1,0 +1,24 @@
+{
+	"title": "Nasty Ass Group Post Bumper",
+	"description": "Make your post looks like it's pinned in a group",
+	"website": "https://github.com/anonoz/NastyAssBumper",
+	"repository": "https://github.com/anonoz/NastyAssBumper",
+	"env": {
+		"FB_APPID": {
+			"description": "Facebook Application ID to use"
+		},
+		"FB_SECRET": {
+			"description": "Facebook Application Secret"
+		},
+		"FREQUENCY": {
+			"description": "How often will the bumper comment be posted (default 2 minutes)",
+			"value": "2m"
+		},
+		"ACCESS_TOKEN": {
+			"description": "Facebook Application Access Token which has been granted permission to post"
+		},
+		"POST_ID": {
+			"description": "The group post's ID to be bumped"
+		}
+	}
+}

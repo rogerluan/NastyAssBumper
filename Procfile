@@ -1,1 +1,1 @@
-bump: bundle exec ruby bump-gsa.rb
+bump: bundle exec ruby bumper.rb
