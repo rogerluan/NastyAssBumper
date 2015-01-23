@@ -13,6 +13,16 @@ A simple script to bump your post in group that you are not administrating and m
 7. Find your group post ID. If your group post permalink is `https://www.facebook.com/groups/groupname/permalink/736699879685753`, then your post ID should be the last part
 8. Click this magical button: [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/anonoz/NastyAssBumper)
 
+## Stopping it
+
+1. Go to [heroku](http://www.heroku.com), log into your account, go into your app's dashboard.
+2. Click **Edit** on top right corner, slide the number of `bump` dynos to 0, save.
+
+## Updating it
+
+1. Go to [heroku](http://www.heroku.com), log into your account, go into your app's dashboard.
+2. Inside **settings** of your app, inside the **Config Variables**, edit the `POST_ID` to the new post ID you want to bump.
+
 # Issues
 
 ## If guide is not clear enough or confuse you
