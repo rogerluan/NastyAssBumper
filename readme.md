@@ -9,8 +9,8 @@ A simple script to bump your post in group that you are not administrating and m
 3. Go to [Graph Explorer](https://developers.facebook.com/tools/explorer/), click on the app you have just created, click on **Get Access Token**.
 4. Under *User Data Permissions*, tick **user_groups**. Then under *Extended Permissions*, tick **publish_actions**. We are going to need the permissions to post a comment to your target group post, then delete it to bump the post.
 5. Once you authorized your app to do such actions, copy down the access token generated.
-6. Do it now or later: [Extend your access token lifetime](#extending-access-token-lifetime).
-7. Find your group post ID. If your group post permalink is `https://www.facebook.com/groups/groupname/permalink/736699879685753`, then your post ID should be the last part
+6. And then [extend your access token lifetime](#extending-access-token-lifetime). This will be the access token you put in Heroku.
+7. Find your group post ID. If your group post permalink is `https://www.facebook.com/groups/12341344/permalink/736699879685753`, then your post ID should be the last part which is **736699879685753**.
 8. Click this magical button: [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/anonoz/NastyAssBumper)
 
 ## Stopping it
