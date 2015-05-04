@@ -12,6 +12,10 @@ A simple script to bump your post in group that you are not administrating and m
 6. And then [extend your access token lifetime](#extending-access-token-lifetime). This will be the access token you put in Heroku.
 7. Find your group post ID. If your group post permalink is `https://www.facebook.com/groups/12341344/permalink/736699879685753`, then your post ID should be the last part which is **736699879685753**.
 8. Click this magical button: [![Deploy](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/anonoz/NastyAssBumper)
+9. Fill in the form and click **Deploy for Free**
+10. Click on **Manage App**
+11. Click on the **Edit** at the top right corner, and slide the number of `bump` dynos to 1.
+12. Hit save
 
 ## Stopping it
 
